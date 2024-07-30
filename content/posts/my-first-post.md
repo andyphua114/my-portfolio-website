@@ -3,6 +3,12 @@ title = 'My First Post'
 date = 2024-07-27T12:53:23+08:00
 summary = "This is it."
 draft = false
+tags = [
+    "portfolio",
+    "markdown",
+    "html",
+]
+
 +++
 
 This article offers a sample of how a post should look like.
