@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portfolio on Welcome</title>
+    <link>http://localhost:1313/categories/portfolio/</link>
+    <description>Recent content in Portfolio on Welcome</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 May 2024 19:54:42 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Another Portfolio Post</title>
+      <link>http://localhost:1313/posts/my-another-portfolio-post/</link>
+      <pubDate>Wed, 08 May 2024 19:54:42 +0800</pubDate>
+      <guid>http://localhost:1313/posts/my-another-portfolio-post/</guid>
+      <description>This is my portfolio post. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &amp;lsquo;Content here, content here&amp;rsquo;.</description>
+    </item>
+    <item>
+      <title>My Good Portfolio Post</title>
+      <link>http://localhost:1313/posts/my-goodportfolio-post/</link>
+      <pubDate>Wed, 08 May 2024 19:54:42 +0800</pubDate>
+      <guid>http://localhost:1313/posts/my-goodportfolio-post/</guid>
+      <description>This is my portfolio post. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &amp;lsquo;Content here, content here&amp;rsquo;.</description>
+    </item>
+    <item>
+      <title>My Portfolio Post</title>
+      <link>http://localhost:1313/posts/my-portfolio-post/</link>
+      <pubDate>Fri, 29 Mar 2024 19:54:42 +0800</pubDate>
+      <guid>http://localhost:1313/posts/my-portfolio-post/</guid>
+      <description>This is my portfolio post. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &amp;lsquo;Content here, content here&amp;rsquo;.</description>
+    </item>
+  </channel>
+</rss>

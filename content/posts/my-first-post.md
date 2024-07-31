@@ -1,10 +1,9 @@
 +++
 title = 'My First Post'
-date = 2024-07-27T12:53:23+08:00
-summary = "This is it."
+date = 2023-12-27T12:53:23+08:00
+summary = "This is it. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
 draft = false
 tags = [
-    "portfolio",
     "markdown",
     "html",
 ]

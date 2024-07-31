@@ -2,3 +2,5 @@ baseURL = 'https://andyphua114.github.io/'
 languageCode = 'en-us'
 title = 'Welcome'
 theme = 'hugo-theme-mini'
+
+paginate = 2
