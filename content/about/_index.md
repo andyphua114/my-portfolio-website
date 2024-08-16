@@ -1,26 +1,16 @@
 +++
 title = "About"
-description = "Hugo, the world's fastest framework for building websites"
-date = "2019-02-28"
-aliases = ["about-us", "about-hugo", "contact"]
-author = "Hugo Authors"
+description = "Me, Myself and I"
+date = "2024-08-16"
+aliases = ["about", "contact"]
+author = "Andy Phua"
 enableComments = false
 +++
 
-Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+Hello! I'm Andy, an aspiring data scientist with a deep passion for transforming data into actionable insights and building technology products. Currently, I am honing my skills as a Senior Data Analyst, where I leverage my expertise in SQL, Python, and Power BI to drive data-driven decision-making and optimize business processes.
 
-Hugo makes use of a variety of open source projects including:
+In addition to my technical expertise, I have extensive experience in strategic planning, operations, and policy development through the appointments I held in my first career role. Beyond my professional achievements, I am committed to continuous learning and growth. I actively seek out opportunities to expand my knowledge in artificial intelligence, web development, cloud computing, and project management. My recent endeavors include fine-tuning large language models and exploring the fascinating world of machine learning.
 
-* https://github.com/yuin/goldmark
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
+As I navigate the ever-evolving landscape of data science, my goal is to contribute meaningfully to the field by staying at the forefront of technological advancements and applying them to real-world challenges. Whether it’s automating processes to improve efficiency or developing models that provide deeper insights, I am driven by the impact that well-crafted data solutions can have on businesses and society.
 
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
-
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
-
-Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+Thank you for visiting my portfolio. Feel free to explore my work and connect with me on [LinkedIn](https://www.linkedin.com/in/andy-phua-027237224/) or through my blog here!

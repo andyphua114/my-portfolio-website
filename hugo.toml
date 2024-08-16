@@ -13,3 +13,6 @@ author = 'Andy Phua'
 bio = 'Senior Data Analyst | Aspiring Data Scientist'
 # Site Description, used in HTML meat
 description = 'My Blog'
+
+[markup.goldmark.renderer]
+unsafe= true

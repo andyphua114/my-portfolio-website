@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Playwright on Hello</title>
+    <link>http://localhost:1313/tags/playwright/</link>
+    <description>Recent content in Playwright on Hello</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Aug 2024 11:50:44 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/playwright/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Collection - Webscraping 101</title>
+      <link>http://localhost:1313/posts/2024-08-03-webscrape-101/</link>
+      <pubDate>Sat, 03 Aug 2024 11:50:44 +0800</pubDate>
+      <guid>http://localhost:1313/posts/2024-08-03-webscrape-101/</guid>
+      <description>This is a draft for sharing on data collection and webscraping techniques.</description>
+    </item>
+  </channel>
+</rss>

@@ -3,8 +3,8 @@ title = 'Why and How I Got Into Georgia Tech OMSA'
 date = 2022-05-22T09:29:04+08:00
 draft = false
 tags = [
-  "Masters",
-  "Georgia Tech",
+  "georgia-tech",  
+  "masters"
 ]
 +++
 
