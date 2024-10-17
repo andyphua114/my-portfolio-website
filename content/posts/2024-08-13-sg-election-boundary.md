@@ -1,8 +1,8 @@
 +++
-title = 'Decoding Singapore Electoral Boundary'
-date = 2024-08-13T20:06:32+08:00
+title = 'Decoding Singapore Electoral Boundaries'
+date = 2024-08-16T19:00:32+08:00
 draft = false
-summary = "This article examines Singapore's electoral boundary delineation and investigates how boundaries have changed in recent elections through the use of a visualization dashboard. Explore and analyze the shifts in electoral boundaries, their potential impacts on election outcomes, and what can changes can we expect in the upcoming General Election."
+summary = "Let's examine Singapore's electoral boundary delineation and investigate how boundaries have changed in recent elections through the use of a visualization dashboard. Explore and analyze the shifts in electoral boundaries, their potential impacts on election outcomes, and what can changes can we expect in the upcoming General Election."
 tags = [
   "api",
   "python",
@@ -15,7 +15,7 @@ categories = [
 
 The delineation of electoral boundaries in Singapore, managed by the Electoral Boundaries Review Committee (EBRC), plays a crucial role in shaping the political landscape. While the government asserts that these boundaries are drawn to serve the interests of Singaporeans and ensure fair representation, the process has faced scrutiny, with some critics accusing it of being a form of gerrymandering — a tactic where boundaries are altered to favor certain political outcomes.
 
-I was curious about how exactly had the delineation of electoral boundaries changes across the recent election years. Using the data available on [Singapore's open data portal](https://beta.data.gov.sg/datasets?agencies=Elections+Department+%28ELD%29), such as the electoral boundary for the recent four general election (GE) years in 2006, 2011, 2015 and 2020 as well as the results, I set about building a simple dashboard to visualize the changes. You can access the dashboard here: [https://sg-electionmap.streamlit.app/](https://sg-electionmap.streamlit.app/)
+I was curious about how exactly had the delineation of electoral boundaries changes across the recent election years. Using the data available on [Singapore's open data portal](https://beta.data.gov.sg/datasets?agencies=Elections+Department+%28ELD%29), such as the electoral boundary for the recent four general election (GE) years in 2006, 2011, 2015 and 2020 as well as the results, I set about building a simple dashboard to visualize the changes. You can check out the dashboard here: [https://sg-electionmap.streamlit.app/](https://sg-electionmap.streamlit.app/)
 
 This dashboard allows users to visualize and analyze changes in electoral boundaries across different election years. It provides a tool to explore how shifts in voter distribution and constituency adjustments might impact electoral outcomes. Users can independently assess the implications of boundary changes and draw their own conclusions.
 
@@ -128,7 +128,7 @@ There were no boundary changes for Hong Kah North in GE2015. Notable changes occ
 {{< figure src="/images/sg-electoral-hongkah-2020.png" width="800" alt="Hong Kah Changes" caption="Boundary changes for Hong Kah North in GE2020" class="markdown-image">}}
 
 My armchair speculation:
-- Remain as an SMC, with parts being abosrbed into Chua Chu Kang GRC <u>_or_</u>
+- Remain as an SMC, with parts being absorbed into Chua Chu Kang GRC <u>_or_</u>
 - Completely absorbed into Chua Chu Kang GRC, and changing the GRC from a 4-member team to a 5-member team
 
 My speculation is based on the fact that Chua Chu Kang could be considered a safe bet given that it is currently anchored by newly designated Deputy Prime Minister Gan Kim Yong. It is unlikely to be absorbed into West Coast GRC, especially considering the close fight in GE2020 where the PAP secured 71,658 votes (51.7%) against PSP's 66.996 votes (48.3%). More on this in the next part.
