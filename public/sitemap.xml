@@ -2,7 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://andyphua114.github.io/tags/aws/</loc>
+    <lastmod>2024-10-18T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://andyphua114.github.io/categories/</loc>
+    <lastmod>2024-10-18T00:00:01+08:00</lastmod>
+  </url><url>
     <loc>https://andyphua114.github.io/</loc>
+    <lastmod>2024-10-18T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://andyphua114.github.io/tags/llm/</loc>
+    <lastmod>2024-10-18T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://andyphua114.github.io/posts/2024-10-18-aws-llml/</loc>
+    <lastmod>2024-10-18T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://andyphua114.github.io/categories/portfolio/</loc>
     <lastmod>2024-10-18T00:00:01+08:00</lastmod>
   </url><url>
     <loc>https://andyphua114.github.io/posts/</loc>
@@ -11,13 +26,7 @@
     <loc>https://andyphua114.github.io/tags/api/</loc>
     <lastmod>2024-08-16T19:00:32+08:00</lastmod>
   </url><url>
-    <loc>https://andyphua114.github.io/categories/</loc>
-    <lastmod>2024-08-16T19:00:32+08:00</lastmod>
-  </url><url>
     <loc>https://andyphua114.github.io/posts/2024-08-13-sg-election-boundary/</loc>
-    <lastmod>2024-08-16T19:00:32+08:00</lastmod>
-  </url><url>
-    <loc>https://andyphua114.github.io/categories/portfolio/</loc>
     <lastmod>2024-08-16T19:00:32+08:00</lastmod>
   </url><url>
     <loc>https://andyphua114.github.io/tags/python/</loc>
