@@ -1,288 +1,32 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <title>My &#39;Secret Sauce&#39; for the Inaugural Singapore Nationwide AWS Large Language Models League (LLML) 2024 | Hello</title>
-
-    <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
-<meta name="viewport" content="width=device-width,minimum-scale=1">
-<meta name="description" content="I am incredibly humbled and fortunate to come in 1st place in the inaugural Singapore Nationwide AWS Large Language Models League (LLML) 2024! I was extremely heartened to have had several individuals reached out to discuss and share their experiences and approaches in tackling this competition. So I wanted to share my personal experiences and lessons learnt.">
-<meta name="generator" content="Hugo 0.129.0">
-
-
-  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-
-
-<link rel="stylesheet" href="/css/style.css">
-
-
-
-<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-
-
-
-
-
-
-
-
-  </head>
-
-  <body>
-    <nav class="navigation">
-	
-		<a href="/"> <span class="arrow">←</span>Home</a>
-	
-	<a href="/posts">Archive</a>
-	<a href="/categories/portfolio">Portfolio</a>
-	<a href="/tags">Tags</a>
-	<a href="/about">About</a>
-
-	
-
-	
-</nav>
-
-
-    <main class="main">
-      
-
-<section id="single">
-    <h1 class="title">My &#39;Secret Sauce&#39; for the Inaugural Singapore Nationwide AWS Large Language Models League (LLML) 2024</h1>
-
-    <div class="tip">
-        <time datetime="2024-10-18 00:00:01 &#43;0800 &#43;08">Oct 18, 2024</time>
-        <span class="split">
-          ·
-        </span>
-        <span>
-          3519 words
-        </span>
-        <span class="split">
-          ·
-        </span>
-        <span>
-          17 minute read
-        </span>
-    </div>
-
-    
-    
-        
-  
-    <aside class="toc">
-      <details>
-          <summary>Table of Contents
-          </summary>
-          <div>
-              <nav id="TableOfContents">
-  <ul>
-    <li><a href="#competition-modality">Competition Modality</a></li>
-    <li><a href="#my-fine-tuning-journey">My Fine-Tuning Journey</a>
-      <ul>
-        <li><a href="#synthetic-data-generation">Synthetic Data Generation</a></li>
-        <li><a href="#hyperparameters-tuning">Hyperparameters Tuning</a></li>
-        <li><a href="#data-data-and-more-data">Data, Data, and More Data!</a></li>
-        <li><a href="#the-last-burst">The Last Burst</a></li>
-      </ul>
-    </li>
-    <li><a href="#tldr">TL;DR</a></li>
-    <li><a href="#grand-finale">Grand Finale</a></li>
-    <li><a href="#prompt-engineering">Prompt Engineering</a></li>
-    <li><a href="#questions-recap">Questions Recap</a></li>
-    <li><a href="#conclusion">Conclusion</a></li>
-  </ul>
-</nav>
-          </div>
-      </details>
-    </aside>
-  
-
-
-    
-
-
-    <div class="content">
-      <figure class="markdown-image" ><img src="/images/aws_llml_winners.jpeg"
-    alt="AWS Finalists" width="800"><figcaption style="font-size: 13px; color: rgb(93, 92, 92); font-style: italic; text-align: center;">
-      <p>Finalists with the esteemed expert judges</p>
-    </figcaption>
-</figure>
-<p>I am incredibly humbled and fortunate to come in 1st place in the inaugural Singapore Nationwide AWS Large Language Models League (LLML) 2024!</p>
-<p>I was extremely heartened to have had several individuals reached out to discuss and share their experiences and approaches in tackling this competition. So I wanted to share my personal experiences and lessons learnt. This is quite a long read, so use the table of content to navigate to where you think might be useful or interest you!</p>
-<p><em>Before I start, I am compelled to share the succinct yet insightful writeup by Swee Heng, who was the undisputed 1st place on the preliminary round leaderboard. Check out his <a href="https://partyrock.aws/u/papaoutai/ovCF-g4rS/QnACrafter/snapshot/rCwuh5YDn" target="_blank" rel="noopener">QnACrafter</a> which I believe was one of his key success factors!</em></p>
-<h2 id="competition-modality">Competition Modality <a href="#competition-modality" class="anchor">🔗</a></h2><p>The LLML is a large language model fine-tuning (and part prompt engineering, albeit only in the Grand Finals) competition organised by Amazon Web Services (AWS) team. As the lead up to the competition, Gen-C (a Gen AI Learning Community) partnered with NLB to conduct multiple free 2-hour workshops on using the no-code AWS SageMaker JumpStart to fine-tune LLMs, with the aim of democratising AI and ML. Find out more in <a href="https://medium.com/@jiaweilin02/singapore-nationwide-large-language-models-league-llml-2024-winning-award-at-aws-partyrock-app-cf5d8721e896" target="_blank" rel="noopener">Jiawei&rsquo;s article</a>.</p>
-<p>In the preliminary round, participants were allowed unlimited submission of their fine-tuned models. Our fine-tuned models (based off the Llama-3-8B-Instruct model) were pitted against a Llama-3–70B-Instruct model on a total of 49 undisclosed questions in the domain of Singapore culture, with the quality of responses judged by another LLM (both the model judge and the system prompt for judging were not revealed). We scored a win for each question where the LLM judge deemed our fine-tuned model&rsquo;s response more accurate and comprehensive than that of the 70B model.</p>
-<p>In the preliminary round, participants were allowed unlimited submission of their fine-tuned models. Our fine-tuned models (based off the Llama-3-8B-Instruct model) were pitted against a Llama-3–70B-Instruct model on a total of 49 undisclosed questions in the domain of Singapore culture, with the quality of responses judged by another LLM (both the model judge and the system prompt for judging were not revealed). We scored a win for each question where the LLM judge deemed our fine-tuned model&rsquo;s response more accurate and comprehensive than that of the 70B model.</p>
-<figure class="markdown-image" ><img src="/images/llm_league.png"
-    alt="LLML Leaderboard" width="800"><figcaption style="font-size: 13px; color: rgb(93, 92, 92); font-style: italic; text-align: center;">
-      <p>I managed to secure 2nd place on the overall leaderboard in the preliminary round</p>
-    </figcaption>
-</figure>
-<p><em>Of note, it seemed like the win-rate of ~50% ain&rsquo;t really that high. We were told that the previous AWS LLM Student League had a win-rate of ~90%. I felt that it could be the topic of &lsquo;&ldquo;Singapore culture&rdquo; being more challenging (as compared to the student league topic of &ldquo;Responsible AI&rdquo;). Due to the cultural nuances in Singapore context and that Singapore-related corpus likely representing a less significant portion of the entire pre-training corpus, it is much more difficult to fine-tune the Llama-3–8B-Instruct model to outperform the 70B. There is a whole lot of literature and research on instruction fine-tuning which I will not go into. It does seem like instruction fine-tuning does not inject new knowledge into the model, but at best brings out its innate knowledge better and adjusts its style.</em></p>
-<p>The top five finalists advanced to the Grand Finale on October 3rd. In the Grand Finale, we faced off against each other over seven questions, judged by a LLM (40%), a panel of five experts (40%), and audience (20%). Besides generating responses using our best fine-tuned models, we also had to craft our own prompts and decide on the temperature and top-P parameters (all within 60 seconds) depending on the nature of each question. Find out more about the Grand Finale in <a href="https://medium.com/southeast-asia/singapore-nationwide-aws-llm-league-2024-5cf53f56b644" target="_blank" rel="noopener">Huy&rsquo;s article</a>.</p>
-<h2 id="my-fine-tuning-journey">My Fine-Tuning Journey <a href="#my-fine-tuning-journey" class="anchor">🔗</a></h2><p>Before I go into the details, I would like to caveat that my insights are based off my trial-and-error fine-tuning attempts. These are empirical and highly likely not reflect universally optimal approaches nor guarantee results. As to how I came in 1st place, I must emphasise that luck played a very big part. All four other finalists were as good, if not better than I was. This was clearly evident as our scores were neck-to-neck across all the rounds. I certainly hope that when you try the same &lsquo;secret sauce&rsquo; as me in the next iteration of the AWS LLML, you will get the same luck!</p>
-<p>In the broad scheme of things, given the limited training hours, the key challenge I felt was on balancing the trial-and-error experiments between hyperparameters tuning and dataset selection - which to focus on.</p>
-<h3 id="synthetic-data-generation">Synthetic Data Generation <a href="#synthetic-data-generation" class="anchor">🔗</a></h3><p>During the workshop, the Gen-C team shared a synthetic data generation app that they built using <a href="https://partyrock.aws/" target="_blank" rel="noopener">AWS Partyrock</a>. We were able to &lsquo;clone&rsquo; the app, and customise it, such as changing the inference model and tweaking the prompts.</p>
-<figure class="markdown-image" ><img src="/images/partyrock.png"
-    alt="AWS PartyRock" width="800"><figcaption style="font-size: 13px; color: rgb(93, 92, 92); font-style: italic; text-align: center;">
-      <p>Synthetic data generation using a gen-AI tool built using AWS Partyrock. Credit to Gen-C Community</p>
-    </figcaption>
-</figure>
-<p>Using it mainly out-of-the-box, I generated some datasets (starting with around 100 and eventually scaling it up to around 800). As the better inference models in Partyrock were limited to Claude 3 Sonnet and Llama-3.1–70B-Instruct, I then tried refining the responses using ChatGPT-4o.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span># simple prompt used to refine the responses generated from Partyrock
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;Paste the instruction-context-reponse generated from Partyrock here&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>In the above, &#34;instruction&#34; refers to a question and &#34;response&#34; refers to the answer to the question.
-</span></span><span style="display:flex;"><span>Evaluate how accurate and comprehensive the &#34;response&#34; is to the &#34;instruction&#34;.
-</span></span><span style="display:flex;"><span>This will be used to fine tune a large language model on Singapore culture.
-</span></span><span style="display:flex;"><span>Replace the &#34;response&#34; with one that is more accurate and comprehensive if required.
-</span></span><span style="display:flex;"><span>Output in the same format, each response on a new line but without any new blank line between responses, in json format.
-</span></span></code></pre></div><p>I did it iteratively using ChatGPT-4o by copying-pasting in batches of 20 instruction-response pairs, so it got pretty tedious. There is an alternative way to do it programmatically using OpenAI API, but at the tradeoff of cost. More on that later.</p>
-<h3 id="hyperparameters-tuning">Hyperparameters Tuning <a href="#hyperparameters-tuning" class="anchor">🔗</a></h3><p>Using AWS SageMaker JumpStart, there were some <a href="https://aws.amazon.com/blogs/machine-learning/fine-tune-llama-3-for-text-generation-on-amazon-sagemaker-jumpstart/" target="_blank" rel="noopener">hyperparameters available</a> for fine-tuning. I mainly focused on <code>epoch</code>, <code>learning_rate</code>, <code>lora_r</code>, and <code>lora_alpha</code>.</p>
-<p>In the early weeks of the preliminary round, I could not quite figure out if I should focus on hyperparameter tuning or the dataset (both size and quality). It felt like a blind chase, with no real improvement in results - except for a modest score of 20/49 (40%), which brought me into the top 50, as many others seemed to stall at 19/49 (38%).</p>
-<p>Below were some of the hyperparameters I tried (although not all 150-ish combinations) and my reflections. Of note, what I did was more like a randomized grid search rather than a exhaustive grid search approach.</p>
-<ul>
-<li><code>epoch</code>: 1 to 5 (with one training iteration using 10)</li>
-<li><code>learning_rate</code>: 0.00005, 0.00002, 0.0001, 0.0002, 0.0003 (with one training iteration using 0.001)</li>
-<li><code>lora_r</code>: 4, 8, 16, 256</li>
-<li><code>lora_alpha</code>: 8, 32, 128, 256, 512</li>
-</ul>
-<p><em>Low-Rank Adaptation (LoRA)</em></p>
-<p>Specifically for the lora_r and lora_alpha combination, I was mainly using lora_alpha being 2x that of lora_r which seemed to be the most commonly suggested ratio, although for some training iterations I tried ratios of 0.5 and 1 based on suggestions from <a href="https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms" target="_blank" rel="noopener">this article</a> on fine-tuning LLMs using LoRA.</p>
-<blockquote>
-<p><em>Choosing alpha as two times r is a common rule of thumb when using LoRA for LLMs, but I was curious if this still holds for larger r values. In other words, &ldquo;alpha = 2×rank&rdquo; really seems to be a sweet spot. However, in this specific combination of model and dataset, where r=256 and alpha=128 (a 0.5-fold scaling) performance is even better… Choosing alpha as two times as large as r may often result in the best outcomes, but it may also not hurt to experiment with different ratios.</em></p>
-</blockquote>
-<p>I also experimented with changing the target_modules for LoRA fine-tuning from the default of <code>q_proj</code> and <code>v_proj</code> to include <code>k_proj</code> and <code>o_proj</code> but got the worst performance at 3/49 (although it could also be due to over-setting my <code>lora_r</code> and <code>lora_alpha</code> at 256 resulting in overfitting). This was something I was keen to explore further, if not for the lack of training hours.</p>
-<p>From that <a href="https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms" target="_blank" rel="noopener">same article</a> and a related <a href="https://magazine.sebastianraschka.com/p/ahead-of-ai-9-llm-tuning-and-dataset" target="_blank" rel="noopener">article</a>, I gleaned some additional insights that guided my next actions.</p>
-<p><em>Epoch</em></p>
-<blockquote>
-<p><em>The takeaway is that multi-epoch training might not benefit instruction finetuning since it can deteriorate the results. I observed the same with the 1k-example LIMA dataset. This performance decline is likely due to increased overfitting, which warrants additional investigation.</em></p>
-</blockquote>
-<p>Hence I decided to keep my <code>epoch</code> at 1 and <code>learning_rate</code> at 0.0001. I wished there were some sort of control over the learning rate through a scheduler for adaptation to improve model performance, convergence, and stability. I also decided to set my <code>lora_r</code> at 4 (and hence <code>lora_alpha</code> of 8) which were the parameters that gave me the best preliminary result of 40%.\</p>
-<p><em>Importance of dataset</em></p>
-<blockquote>
-<p><em>The dataset can be critical… Data quality can be very important.</em></p>
-</blockquote>
-<blockquote>
-<p><em>In the LIMA paper, the researchers showed that a 65B LLaMA model finetuned on only 1000 examples (in a supervised fashion) is not too far behind bigger models like ChatGPT / GPT3.5… So we may conclude that the difference is really in the quality of the training set</em></p>
-</blockquote>
-<p>Noting the above, I decided to switch focus to the dataset.</p>
-<h3 id="data-data-and-more-data">Data, Data, and More Data! <a href="#data-data-and-more-data" class="anchor">🔗</a></h3><p>I think like many others, I had limited success using the synthetic data generated from Partyrock, although I believe it could be better if I had spent more effort to customise it.</p>
-<p>At the start, I had come across a dataset from the <a href="https://github.com/SeaEval/SeaEval" target="_blank" rel="noopener">SeaEval</a> team (some of the researchers are actually from A*STAR Singapore!), who introduced a <a href="https://arxiv.org/pdf/2405.03138" target="_blank" rel="noopener">novel pipeline for extracting high-quality, culturally-related instruction tuning datasets from vast unstructured corpora</a>. They open-sourced a <a href="https://huggingface.co/datasets/SeaEval/CRAFT-Singapore-Instruction-GPT4" target="_blank" rel="noopener">Singapore-context instruction-response dataset</a> that was created using GPT-4. There were about 26k data points which seemed perfect for what we need to fine-tune our model for the competition!</p>
-<p>I had tried using this dataset very early on, but ambitiously used the full dataset and set <code>epoch = 3</code> which unsurprisingly exhausted all my remaining training hours (given 3 hours at the start) before the fine-tuning could complete. Thankfully, along the way, we were given additional training hours after we attended the clinic sessions conducted by Gen-C community.</p>
-<p>Lessons learnt. So I re-strategized and decided to adopt a more cautious approach with the dataset size. The natural question is how big would a dataset be considered enough? That&rsquo;s when I came across this paper &ldquo;<a href="https://arxiv.org/pdf/2305.11206" target="_blank" rel="noopener">LIMA: Less Is More for Alignment</a>&rdquo; which showed that:</p>
-<blockquote>
-<p><em>fine-tuning a strong pretrained language model on 1,000 carefully curated examples can produce remarkable, competitive results on a wide range of prompts</em></p>
-</blockquote>
-<p>Next question - how can I curate good quality data? Thankfully another paper came to the rescue. This paper &ldquo;<a href="https://arxiv.org/pdf/2402.04833" target="_blank" rel="noopener">Long Is More for Alignment: A Simple but Tough-to-Beat Baseline for Instruction Fine-Tuning</a>&rdquo; found that:</p>
-<blockquote>
-<p><em>the extremely simple baseline of selecting the 1,000 instructions with longest responses - that intuitively contain more learnable information and are harder to overfit - from standard datasets can consistently outperform these sophisticated methods</em></p>
-</blockquote>
-<p>Afternote: came across another paper &ldquo;<a href="https://arxiv.org/pdf/2410.09335" target="_blank" rel="noopener">Rethinking Data Selection at Scale: Random Selection is Almost All You Need</a>&rdquo; that said:</p>
-<blockquote>
-<p><em>selecting data by token length can stably obtain a relatively high training benefit, reduce the uncertainty caused by randomness, and reduce costs. This approach is particularly beneficial for base language models which generally have limited capabilities (Llama-3), as they tend to derive the most significant benefits from training on longer texts</em></p>
-</blockquote>
-<p>With these, I came up with an approach: choose the top 1,000 data points with the longest response token length (which I dub as SeaEval-1k) from the SeaEval-26k dataset. Using this dataset, I scored a breakthrough at 23/49 (46%). I then tried with the top 2,000 data points but it gave me the same result.</p>
-<p>Following some success, I had an inclination that the dataset was probably of good enough quality, I then tried a fresh iteration of training using the full 26k dataset (albeit conservatively setting <code>epoch = 1</code> this time round). That got me to a new high of 26/49 (53%). Naturally, the next question followed, just how much more data could continue to push the performance envelope?</p>
-<p>SeaEval had another <a href="https://huggingface.co/datasets/SeaEval/CRAFT-Singapore-v2-166k" target="_blank" rel="noopener">set of 166k dataset</a>, which seemed to be generated using Llama-3–8B-Instruct instead of GPT-4. I had the intuition that this dataset could be of lower quality, due to the nature of the inference model and judging by the noticeably shorter average response length as compared to SeaEval-26k (which was generated from GPT-4). Nevertheless, I chose the top 25k data points with the longest response token length and combined that with SeaEval-26k dataset. Unsurprisingly, this turned out with a noticeably worse-off performance at 17/49 (34%).</p>
-<p>Although I had the idea to refine the 166k dataset responses using ChatGPT-4o, I felt that the whole copying-pasting and wait time for inference would be too tedious. The OpenAI batch API was another option to do it programmatically, but I forwent it due to potential costs (as I wanted the response to be long - which meant higher token costs).</p>
-<p>There is a whole realm and recent attention on synthetic data generation, so feel free to dive into the rabbit-hole if you would!</p>
-<h3 id="the-last-burst">The Last Burst <a href="#the-last-burst" class="anchor">🔗</a></h3><p>As we neared the end of the preliminary round, I decided to focus on the SeaEval-1k and circled back to experiment with some hyperparameters tuning.</p>
-<p>Using the same <code>learning_rate</code>, <code>lora_r</code>, and <code>lora_alpha</code>, I iterated with <code>epoch = 2</code> and <code>epoch = 3</code>, which gave me a score of 24/49 (48%) and 25/49 (51%) respectively. Preliminary, it seemed like there is some correlation between increasing epoch and performance, but to what extent remained to be answered (as I had wanted to reserve my remaining training hours for one final fine-tuning).</p>
-<p>In my final fine-tuning, I again used the full SeaEval-26k but increased the <code>epoch</code> from 1 to 2. This eventually netted me my best final score of 27/49 (55%) and hence 2nd place in the preliminary round. However, this came at a cost of ~8 hours of training time (although the training time could potentially be reduced using a higher <code>per_device_train_batch_size</code> as the default is 1, but there is a need to tread this carefully to avoid out-of-memory issue).</p>
-<h2 id="tldr">TL;DR <a href="#tldr" class="anchor">🔗</a></h2><ul>
-<li>Dataset quality &gt; quantity - start with 1k and use long response token length as a proxy for quality.</li>
-<li>Experiment with other hyperparameters like <code>lora_r</code>, <code>lora_alpha</code>, <code>lora_dropout</code>, <code>target_modules</code> besides <code>epoch</code> and <code>learning_rate</code>, but have a systematic plan of tuning.</li>
-<li>Increase <code>per_device_train_batch_size</code> to reduce training time but within the limits of available memory (thanks Swee Heng for this tip).</li>
-<li>Use the training and evaluation losses as indication of overfitting. It would be even better to monitor your training and evaluation losses (albeit there is no easy way to do this except for monitoring the logs) and cut your &rsquo;losses&rsquo; (pun-intended) early if you detect overfitting to save your training hours. This is especially if you are training for a high number of <code>epoch</code>.</li>
-<li>Read academic/research papers (if you can and are interested!). One of the best resources is <a href="https://arxiv.org/" target="_blank" rel="noopener">arXiv</a>. You don&rsquo;t necessary need to understand the details but they can give good intuition and ideas to try.</li>
-<li>Keep a log of hyperparameters and datasets used, and the corresponding model performance for reference.</li>
-</ul>
-<h2 id="grand-finale">Grand Finale <a href="#grand-finale" class="anchor">🔗</a></h2><p>At the Grand Finale, the finalists had to craft our prompts and decide on the temperature and top-P parameters (all within 60 seconds) depending on the nature of each question.</p>
-<figure class="markdown-image" ><img src="/images/interface.jpg"
-    alt="AWS Grand Finale UI" width="800"><figcaption style="font-size: 13px; color: rgb(93, 92, 92); font-style: italic; text-align: center;">
-      <p>Interface used for the Grand Finale (Note: this was a test question during dry run)</p>
-    </figcaption>
-</figure>
-<p>There wasn&rsquo;t really too much time to meddle with the temperature and top-P given the limited time we had for inference, so I left it at the default of 1 and 0.9. I decided so in view that the questions were largely argumentative rather than factual in nature (more so for question 6 and 7 which tested our models&rsquo; on creativity).</p>
-<h2 id="prompt-engineering">Prompt Engineering <a href="#prompt-engineering" class="anchor">🔗</a></h2><p>We had a dry run the day before the Grand Finale to familiarise ourselves with the interface and parameters. Given the limited time we had to prompt, get the inference output and potentially re-prompt, the finalists had a consensus to prepare our prompts beforehand so that we can do a simple copying-pasting during the actual Grand Finale.</p>
-<p>Being a novice in prompt engineering (and the lack of energy to deep dive into it), I prepared a simple prompt based off some brief research:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>You are an expert on Singapore culture and will be judged on your answer.
-</span></span><span style="display:flex;"><span>Answer the question as accurate and comprehensive.
-</span></span><span style="display:flex;"><span>Start with a title and then a short introduction.
-</span></span><span style="display:flex;"><span>Use sub paragraphs and elaborate in details in point forms.
-</span></span><span style="display:flex;"><span>Give as many details and examples as possible.
-</span></span></code></pre></div><p><em>Sidenote: you could actually ask ChatGPT to suggest a good prompt framework for you, which one of the finalists Chee Hoe did and gotten pretty good results!</em></p>
-<p>The interface we were using for the Grand Finale would automatically append the actual question to the prompt, so we did not have to copy the question into the prompt.</p>
-<p>Since we were judged by a LLM (40%), a panel of five experts (40%), and audience (20%), I felt that the most controllable component was the LLM judge. Hence, I had the strategy (and hence the way I crafted my prompt) to focus on generating a long response in hope to maximise the LLM judge&rsquo;s score. From the preliminary round, it seemed like a LLM judge had the tendency to prefer longer response. I also came across another working paper &ldquo;<a href="https://arxiv.org/pdf/2409.15268" target="_blank" rel="noopener">Style Outweighs Substance: Failure Modes of LLM Judges in Alignment Benchmarking</a>&rdquo; which suggested that LLM judges have implicit biasness and prioritise style over factuality.</p>
-<p>My strategy mostly worked as I was scored relatively well by the LLM judge, but much less so by the panel of experts. This was expected and I was simply trying to hang on and stay in the game for 3rd place (because I just wanted the nice trophy!).</p>
-<p>The turning point came in the final question (the bonus round) which gave double points. It was a question that tested the model&rsquo;s creativity to come up with an &ldquo;<em>innovative acronym that captures the essence of Singapore culture</em>&rdquo;. I had the intuition to amend my prompt slightly, hoping that the response would be more creative and light-hearted, while ensuring that the output format that is not too structured and rigid (i.e. avoid title and sub-paragraphs).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>You are an expert on Singapore culture and will be judged on your answer.
-</span></span><span style="display:flex;"><span>Answer the question as accurate and comprehensive.
-</span></span><span style="display:flex;"><span>Come up with an acronym and explain in details.
-</span></span><span style="display:flex;"><span>Be creative and funny.
-</span></span></code></pre></div><p>On the first inference attempt, my model came up with an acronym that was not an actual word. Hence I made the decision to regenerate and it thankfully it came up with an acronym S.A.C.R.E.D that made sense. I felt it had a good connotation when used to describe Singapore! For this question, I think I was judged as 2nd by the LLM judge and 1st from the panel of experts, which pushed me to overall 1st place.</p>
-<p>On hindsight, I could have amended my prompt along the lines of: &ldquo;<em>Come up with an acronym that is an actual word related to Singapore, and explain in details</em>&rdquo;.</p>
-<h2 id="questions-recap">Questions Recap <a href="#questions-recap" class="anchor">🔗</a></h2><p>To have a sense of how our fine-tuned LLMs were put to the test, here are the seven questions that were asked:</p>
-<ol>
-<li>How has Singapore&rsquo;s multicultural heritage influenced its modern cuisine, and what are some of the latest unique fusion dishes that have I emerged as a result?</li>
-<li>Describe the significance of the &ldquo;kampong spirit&rdquo; in Singapore&rsquo;s history and explain how it has evolved in today&rsquo;s urban environment.</li>
-<li>Explain the role of Singlish in Singaporean identity and discuss the government&rsquo;s stance on its usage in formal and informal settings.</li>
-<li>What has changed in Singapore&rsquo;s education system lately and how does it shape the country&rsquo;s cultural values and prepare the future generations?</li>
-<li>Where are the recommended hawker centres in Singapore and its famous dishes for Generation Z?</li>
-<li>Write a memoir about changes you&rsquo;ve seen in Singaporean commuters over the years. What are the most amusing trends you&rsquo;ve noticed in 2024?</li>
-<li>Singaporeans are known for their love of acronyms and abbreviations (e.g., &ldquo;BTO&rdquo; for &ldquo;Built to Order&rdquo;). Can you create an innovative acronym that captures the essence of Singapore culture?</li>
-</ol>
-<h2 id="conclusion">Conclusion <a href="#conclusion" class="anchor">🔗</a></h2><p>I had great fun participating in the LLML and I hope this writeup will help future participants have a shorter learning curve and see early success in their fine-tuning efforts. I certainly expect the next round of LLML to be more intense and competitive!</p>
-<p>I am by no means an expert in fine-tuning or prompting, and there&rsquo;s still so much for me to learn. Looking forward to connecting with and learning from many more like-minded people in the AI space!</p>
-<p>Special thanks to Gen-C Generative AI Learning Community for hosting the workshop and the AWS team for organizing and facilitating the LLML, and many others who contributed to the success of the workshop and competition!</p>
-<p>Till the next Singapore Nationwide AWS Large Language Models League!</p>
-
-    </div>
-
-    
-        <div class="tags">
-            
-                <a href="https://andyphua114.github.io/tags/llm">llm</a>
-            
-                <a href="https://andyphua114.github.io/tags/aws">aws</a>
-            
-        </div>
-    
-    
-    
-
-</section>
-
-
-    </main>
-    
-    <footer id="footer">
-    
-
-    <div class="copyright">
-    
-       © Copyright 
-       2025 
-       <span class="split">
-        <svg fill="#bbbbbb" width="15" height="15" version="1.1" id="heart-15" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15">
-  <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75&#xA;&#x9;C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"/>
-</svg>
-       </span>
-       Andy Phua
-    
-    </div>
-
-    
-      <div class="powerby">
-        Powered by <a href='http://www.gohugo.io/'>Hugo</a> Theme By <a href='https://github.com/nodejh/hugo-theme-mini'>nodejh</a>
-      </div>
-    
-</footer>
-
-
-
-  </body>
-</html>
+<!doctype html><html lang=en-us><head><title>My 'Secret Sauce' for the Inaugural Singapore Nationwide AWS Large Language Models League (LLML) 2024 | Hello</title>
+<meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content="I am incredibly humbled and fortunate to come in 1st place in the inaugural Singapore Nationwide AWS Large Language Models League (LLML) 2024! I was extremely heartened to have had several individuals reached out to discuss and share their experiences and approaches in tackling this competition. So I wanted to share my personal experiences and lessons learnt."><meta name=generator content="Hugo 0.129.0"><meta name=ROBOTS content="NOINDEX, NOFOLLOW"><link rel=stylesheet href=/css/style.css><link rel="shortcut icon" href=/images/favicon.ico type=image/x-icon><script async src="https://www.googletagmanager.com/gtag/js?id=G-8WWJE6P22E"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-8WWJE6P22E")}</script></head><body><nav class=navigation><a href=/><span class=arrow>←</span>Home</a>
+<a href=/posts>Archive</a>
+<a href=/categories/portfolio>Portfolio</a>
+<a href=/tags>Tags</a>
+<a href=/about>About</a></nav><main class=main><section id=single><h1 class=title>My 'Secret Sauce' for the Inaugural Singapore Nationwide AWS Large Language Models League (LLML) 2024</h1><div class=tip><time datetime="2024-10-18 00:00:01 +0800 +08">Oct 18, 2024</time>
+<span class=split>·
+</span><span>3519 words
+</span><span class=split>·
+</span><span>17 minute read</span></div><aside class=toc><details><summary>Table of Contents</summary><div><nav id=TableOfContents><ul><li><a href=#competition-modality>Competition Modality</a></li><li><a href=#my-fine-tuning-journey>My Fine-Tuning Journey</a><ul><li><a href=#synthetic-data-generation>Synthetic Data Generation</a></li><li><a href=#hyperparameters-tuning>Hyperparameters Tuning</a></li><li><a href=#data-data-and-more-data>Data, Data, and More Data!</a></li><li><a href=#the-last-burst>The Last Burst</a></li></ul></li><li><a href=#tldr>TL;DR</a></li><li><a href=#grand-finale>Grand Finale</a></li><li><a href=#prompt-engineering>Prompt Engineering</a></li><li><a href=#questions-recap>Questions Recap</a></li><li><a href=#conclusion>Conclusion</a></li></ul></nav></div></details></aside><div class=content><figure class=markdown-image><img src=/images/aws_llml_winners.jpeg alt="AWS Finalists" width=800><figcaption style=font-size:13px;color:#5d5c5c;font-style:italic;text-align:center><p>Finalists with the esteemed expert judges</p></figcaption></figure><p>I am incredibly humbled and fortunate to come in 1st place in the inaugural Singapore Nationwide AWS Large Language Models League (LLML) 2024!</p><p>I was extremely heartened to have had several individuals reached out to discuss and share their experiences and approaches in tackling this competition. So I wanted to share my personal experiences and lessons learnt. This is quite a long read, so use the table of content to navigate to where you think might be useful or interest you!</p><p><em>Before I start, I am compelled to share the succinct yet insightful writeup by Swee Heng, who was the undisputed 1st place on the preliminary round leaderboard. Check out his <a href=https://partyrock.aws/u/papaoutai/ovCF-g4rS/QnACrafter/snapshot/rCwuh5YDn target=_blank rel=noopener>QnACrafter</a> which I believe was one of his key success factors!</em></p><h2 id=competition-modality>Competition Modality <a href=#competition-modality class=anchor>🔗</a></h2><p>The LLML is a large language model fine-tuning (and part prompt engineering, albeit only in the Grand Finals) competition organised by Amazon Web Services (AWS) team. As the lead up to the competition, Gen-C (a Gen AI Learning Community) partnered with NLB to conduct multiple free 2-hour workshops on using the no-code AWS SageMaker JumpStart to fine-tune LLMs, with the aim of democratising AI and ML. Find out more in <a href=https://medium.com/@jiaweilin02/singapore-nationwide-large-language-models-league-llml-2024-winning-award-at-aws-partyrock-app-cf5d8721e896 target=_blank rel=noopener>Jiawei&rsquo;s article</a>.</p><p>In the preliminary round, participants were allowed unlimited submission of their fine-tuned models. Our fine-tuned models (based off the Llama-3-8B-Instruct model) were pitted against a Llama-3–70B-Instruct model on a total of 49 undisclosed questions in the domain of Singapore culture, with the quality of responses judged by another LLM (both the model judge and the system prompt for judging were not revealed). We scored a win for each question where the LLM judge deemed our fine-tuned model&rsquo;s response more accurate and comprehensive than that of the 70B model.</p><p>In the preliminary round, participants were allowed unlimited submission of their fine-tuned models. Our fine-tuned models (based off the Llama-3-8B-Instruct model) were pitted against a Llama-3–70B-Instruct model on a total of 49 undisclosed questions in the domain of Singapore culture, with the quality of responses judged by another LLM (both the model judge and the system prompt for judging were not revealed). We scored a win for each question where the LLM judge deemed our fine-tuned model&rsquo;s response more accurate and comprehensive than that of the 70B model.</p><figure class=markdown-image><img src=/images/llm_league.png alt="LLML Leaderboard" width=800><figcaption style=font-size:13px;color:#5d5c5c;font-style:italic;text-align:center><p>I managed to secure 2nd place on the overall leaderboard in the preliminary round</p></figcaption></figure><p><em>Of note, it seemed like the win-rate of ~50% ain&rsquo;t really that high. We were told that the previous AWS LLM Student League had a win-rate of ~90%. I felt that it could be the topic of &lsquo;&ldquo;Singapore culture&rdquo; being more challenging (as compared to the student league topic of &ldquo;Responsible AI&rdquo;). Due to the cultural nuances in Singapore context and that Singapore-related corpus likely representing a less significant portion of the entire pre-training corpus, it is much more difficult to fine-tune the Llama-3–8B-Instruct model to outperform the 70B. There is a whole lot of literature and research on instruction fine-tuning which I will not go into. It does seem like instruction fine-tuning does not inject new knowledge into the model, but at best brings out its innate knowledge better and adjusts its style.</em></p><p>The top five finalists advanced to the Grand Finale on October 3rd. In the Grand Finale, we faced off against each other over seven questions, judged by a LLM (40%), a panel of five experts (40%), and audience (20%). Besides generating responses using our best fine-tuned models, we also had to craft our own prompts and decide on the temperature and top-P parameters (all within 60 seconds) depending on the nature of each question. Find out more about the Grand Finale in <a href=https://medium.com/southeast-asia/singapore-nationwide-aws-llm-league-2024-5cf53f56b644 target=_blank rel=noopener>Huy&rsquo;s article</a>.</p><h2 id=my-fine-tuning-journey>My Fine-Tuning Journey <a href=#my-fine-tuning-journey class=anchor>🔗</a></h2><p>Before I go into the details, I would like to caveat that my insights are based off my trial-and-error fine-tuning attempts. These are empirical and highly likely not reflect universally optimal approaches nor guarantee results. As to how I came in 1st place, I must emphasise that luck played a very big part. All four other finalists were as good, if not better than I was. This was clearly evident as our scores were neck-to-neck across all the rounds. I certainly hope that when you try the same &lsquo;secret sauce&rsquo; as me in the next iteration of the AWS LLML, you will get the same luck!</p><p>In the broad scheme of things, given the limited training hours, the key challenge I felt was on balancing the trial-and-error experiments between hyperparameters tuning and dataset selection - which to focus on.</p><h3 id=synthetic-data-generation>Synthetic Data Generation <a href=#synthetic-data-generation class=anchor>🔗</a></h3><p>During the workshop, the Gen-C team shared a synthetic data generation app that they built using <a href=https://partyrock.aws/ target=_blank rel=noopener>AWS Partyrock</a>. We were able to &lsquo;clone&rsquo; the app, and customise it, such as changing the inference model and tweaking the prompts.</p><figure class=markdown-image><img src=/images/partyrock.png alt="AWS PartyRock" width=800><figcaption style=font-size:13px;color:#5d5c5c;font-style:italic;text-align:center><p>Synthetic data generation using a gen-AI tool built using AWS Partyrock. Credit to Gen-C Community</p></figcaption></figure><p>Using it mainly out-of-the-box, I generated some datasets (starting with around 100 and eventually scaling it up to around 800). As the better inference models in Partyrock were limited to Claude 3 Sonnet and Llama-3.1–70B-Instruct, I then tried refining the responses using ChatGPT-4o.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plaintext data-lang=plaintext><span style=display:flex><span># simple prompt used to refine the responses generated from Partyrock
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;Paste the instruction-context-reponse generated from Partyrock here&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>In the above, &#34;instruction&#34; refers to a question and &#34;response&#34; refers to the answer to the question.
+</span></span><span style=display:flex><span>Evaluate how accurate and comprehensive the &#34;response&#34; is to the &#34;instruction&#34;.
+</span></span><span style=display:flex><span>This will be used to fine tune a large language model on Singapore culture.
+</span></span><span style=display:flex><span>Replace the &#34;response&#34; with one that is more accurate and comprehensive if required.
+</span></span><span style=display:flex><span>Output in the same format, each response on a new line but without any new blank line between responses, in json format.
+</span></span></code></pre></div><p>I did it iteratively using ChatGPT-4o by copying-pasting in batches of 20 instruction-response pairs, so it got pretty tedious. There is an alternative way to do it programmatically using OpenAI API, but at the tradeoff of cost. More on that later.</p><h3 id=hyperparameters-tuning>Hyperparameters Tuning <a href=#hyperparameters-tuning class=anchor>🔗</a></h3><p>Using AWS SageMaker JumpStart, there were some <a href=https://aws.amazon.com/blogs/machine-learning/fine-tune-llama-3-for-text-generation-on-amazon-sagemaker-jumpstart/ target=_blank rel=noopener>hyperparameters available</a> for fine-tuning. I mainly focused on <code>epoch</code>, <code>learning_rate</code>, <code>lora_r</code>, and <code>lora_alpha</code>.</p><p>In the early weeks of the preliminary round, I could not quite figure out if I should focus on hyperparameter tuning or the dataset (both size and quality). It felt like a blind chase, with no real improvement in results - except for a modest score of 20/49 (40%), which brought me into the top 50, as many others seemed to stall at 19/49 (38%).</p><p>Below were some of the hyperparameters I tried (although not all 150-ish combinations) and my reflections. Of note, what I did was more like a randomized grid search rather than a exhaustive grid search approach.</p><ul><li><code>epoch</code>: 1 to 5 (with one training iteration using 10)</li><li><code>learning_rate</code>: 0.00005, 0.00002, 0.0001, 0.0002, 0.0003 (with one training iteration using 0.001)</li><li><code>lora_r</code>: 4, 8, 16, 256</li><li><code>lora_alpha</code>: 8, 32, 128, 256, 512</li></ul><p><em>Low-Rank Adaptation (LoRA)</em></p><p>Specifically for the lora_r and lora_alpha combination, I was mainly using lora_alpha being 2x that of lora_r which seemed to be the most commonly suggested ratio, although for some training iterations I tried ratios of 0.5 and 1 based on suggestions from <a href=https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms target=_blank rel=noopener>this article</a> on fine-tuning LLMs using LoRA.</p><blockquote><p><em>Choosing alpha as two times r is a common rule of thumb when using LoRA for LLMs, but I was curious if this still holds for larger r values. In other words, &ldquo;alpha = 2×rank&rdquo; really seems to be a sweet spot. However, in this specific combination of model and dataset, where r=256 and alpha=128 (a 0.5-fold scaling) performance is even better… Choosing alpha as two times as large as r may often result in the best outcomes, but it may also not hurt to experiment with different ratios.</em></p></blockquote><p>I also experimented with changing the target_modules for LoRA fine-tuning from the default of <code>q_proj</code> and <code>v_proj</code> to include <code>k_proj</code> and <code>o_proj</code> but got the worst performance at 3/49 (although it could also be due to over-setting my <code>lora_r</code> and <code>lora_alpha</code> at 256 resulting in overfitting). This was something I was keen to explore further, if not for the lack of training hours.</p><p>From that <a href=https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms target=_blank rel=noopener>same article</a> and a related <a href=https://magazine.sebastianraschka.com/p/ahead-of-ai-9-llm-tuning-and-dataset target=_blank rel=noopener>article</a>, I gleaned some additional insights that guided my next actions.</p><p><em>Epoch</em></p><blockquote><p><em>The takeaway is that multi-epoch training might not benefit instruction finetuning since it can deteriorate the results. I observed the same with the 1k-example LIMA dataset. This performance decline is likely due to increased overfitting, which warrants additional investigation.</em></p></blockquote><p>Hence I decided to keep my <code>epoch</code> at 1 and <code>learning_rate</code> at 0.0001. I wished there were some sort of control over the learning rate through a scheduler for adaptation to improve model performance, convergence, and stability. I also decided to set my <code>lora_r</code> at 4 (and hence <code>lora_alpha</code> of 8) which were the parameters that gave me the best preliminary result of 40%.\</p><p><em>Importance of dataset</em></p><blockquote><p><em>The dataset can be critical… Data quality can be very important.</em></p></blockquote><blockquote><p><em>In the LIMA paper, the researchers showed that a 65B LLaMA model finetuned on only 1000 examples (in a supervised fashion) is not too far behind bigger models like ChatGPT / GPT3.5… So we may conclude that the difference is really in the quality of the training set</em></p></blockquote><p>Noting the above, I decided to switch focus to the dataset.</p><h3 id=data-data-and-more-data>Data, Data, and More Data! <a href=#data-data-and-more-data class=anchor>🔗</a></h3><p>I think like many others, I had limited success using the synthetic data generated from Partyrock, although I believe it could be better if I had spent more effort to customise it.</p><p>At the start, I had come across a dataset from the <a href=https://github.com/SeaEval/SeaEval target=_blank rel=noopener>SeaEval</a> team (some of the researchers are actually from A*STAR Singapore!), who introduced a <a href=https://arxiv.org/pdf/2405.03138 target=_blank rel=noopener>novel pipeline for extracting high-quality, culturally-related instruction tuning datasets from vast unstructured corpora</a>. They open-sourced a <a href=https://huggingface.co/datasets/SeaEval/CRAFT-Singapore-Instruction-GPT4 target=_blank rel=noopener>Singapore-context instruction-response dataset</a> that was created using GPT-4. There were about 26k data points which seemed perfect for what we need to fine-tune our model for the competition!</p><p>I had tried using this dataset very early on, but ambitiously used the full dataset and set <code>epoch = 3</code> which unsurprisingly exhausted all my remaining training hours (given 3 hours at the start) before the fine-tuning could complete. Thankfully, along the way, we were given additional training hours after we attended the clinic sessions conducted by Gen-C community.</p><p>Lessons learnt. So I re-strategized and decided to adopt a more cautious approach with the dataset size. The natural question is how big would a dataset be considered enough? That&rsquo;s when I came across this paper &ldquo;<a href=https://arxiv.org/pdf/2305.11206 target=_blank rel=noopener>LIMA: Less Is More for Alignment</a>&rdquo; which showed that:</p><blockquote><p><em>fine-tuning a strong pretrained language model on 1,000 carefully curated examples can produce remarkable, competitive results on a wide range of prompts</em></p></blockquote><p>Next question - how can I curate good quality data? Thankfully another paper came to the rescue. This paper &ldquo;<a href=https://arxiv.org/pdf/2402.04833 target=_blank rel=noopener>Long Is More for Alignment: A Simple but Tough-to-Beat Baseline for Instruction Fine-Tuning</a>&rdquo; found that:</p><blockquote><p><em>the extremely simple baseline of selecting the 1,000 instructions with longest responses - that intuitively contain more learnable information and are harder to overfit - from standard datasets can consistently outperform these sophisticated methods</em></p></blockquote><p>Afternote: came across another paper &ldquo;<a href=https://arxiv.org/pdf/2410.09335 target=_blank rel=noopener>Rethinking Data Selection at Scale: Random Selection is Almost All You Need</a>&rdquo; that said:</p><blockquote><p><em>selecting data by token length can stably obtain a relatively high training benefit, reduce the uncertainty caused by randomness, and reduce costs. This approach is particularly beneficial for base language models which generally have limited capabilities (Llama-3), as they tend to derive the most significant benefits from training on longer texts</em></p></blockquote><p>With these, I came up with an approach: choose the top 1,000 data points with the longest response token length (which I dub as SeaEval-1k) from the SeaEval-26k dataset. Using this dataset, I scored a breakthrough at 23/49 (46%). I then tried with the top 2,000 data points but it gave me the same result.</p><p>Following some success, I had an inclination that the dataset was probably of good enough quality, I then tried a fresh iteration of training using the full 26k dataset (albeit conservatively setting <code>epoch = 1</code> this time round). That got me to a new high of 26/49 (53%). Naturally, the next question followed, just how much more data could continue to push the performance envelope?</p><p>SeaEval had another <a href=https://huggingface.co/datasets/SeaEval/CRAFT-Singapore-v2-166k target=_blank rel=noopener>set of 166k dataset</a>, which seemed to be generated using Llama-3–8B-Instruct instead of GPT-4. I had the intuition that this dataset could be of lower quality, due to the nature of the inference model and judging by the noticeably shorter average response length as compared to SeaEval-26k (which was generated from GPT-4). Nevertheless, I chose the top 25k data points with the longest response token length and combined that with SeaEval-26k dataset. Unsurprisingly, this turned out with a noticeably worse-off performance at 17/49 (34%).</p><p>Although I had the idea to refine the 166k dataset responses using ChatGPT-4o, I felt that the whole copying-pasting and wait time for inference would be too tedious. The OpenAI batch API was another option to do it programmatically, but I forwent it due to potential costs (as I wanted the response to be long - which meant higher token costs).</p><p>There is a whole realm and recent attention on synthetic data generation, so feel free to dive into the rabbit-hole if you would!</p><h3 id=the-last-burst>The Last Burst <a href=#the-last-burst class=anchor>🔗</a></h3><p>As we neared the end of the preliminary round, I decided to focus on the SeaEval-1k and circled back to experiment with some hyperparameters tuning.</p><p>Using the same <code>learning_rate</code>, <code>lora_r</code>, and <code>lora_alpha</code>, I iterated with <code>epoch = 2</code> and <code>epoch = 3</code>, which gave me a score of 24/49 (48%) and 25/49 (51%) respectively. Preliminary, it seemed like there is some correlation between increasing epoch and performance, but to what extent remained to be answered (as I had wanted to reserve my remaining training hours for one final fine-tuning).</p><p>In my final fine-tuning, I again used the full SeaEval-26k but increased the <code>epoch</code> from 1 to 2. This eventually netted me my best final score of 27/49 (55%) and hence 2nd place in the preliminary round. However, this came at a cost of ~8 hours of training time (although the training time could potentially be reduced using a higher <code>per_device_train_batch_size</code> as the default is 1, but there is a need to tread this carefully to avoid out-of-memory issue).</p><h2 id=tldr>TL;DR <a href=#tldr class=anchor>🔗</a></h2><ul><li>Dataset quality > quantity - start with 1k and use long response token length as a proxy for quality.</li><li>Experiment with other hyperparameters like <code>lora_r</code>, <code>lora_alpha</code>, <code>lora_dropout</code>, <code>target_modules</code> besides <code>epoch</code> and <code>learning_rate</code>, but have a systematic plan of tuning.</li><li>Increase <code>per_device_train_batch_size</code> to reduce training time but within the limits of available memory (thanks Swee Heng for this tip).</li><li>Use the training and evaluation losses as indication of overfitting. It would be even better to monitor your training and evaluation losses (albeit there is no easy way to do this except for monitoring the logs) and cut your &rsquo;losses&rsquo; (pun-intended) early if you detect overfitting to save your training hours. This is especially if you are training for a high number of <code>epoch</code>.</li><li>Read academic/research papers (if you can and are interested!). One of the best resources is <a href=https://arxiv.org/ target=_blank rel=noopener>arXiv</a>. You don&rsquo;t necessary need to understand the details but they can give good intuition and ideas to try.</li><li>Keep a log of hyperparameters and datasets used, and the corresponding model performance for reference.</li></ul><h2 id=grand-finale>Grand Finale <a href=#grand-finale class=anchor>🔗</a></h2><p>At the Grand Finale, the finalists had to craft our prompts and decide on the temperature and top-P parameters (all within 60 seconds) depending on the nature of each question.</p><figure class=markdown-image><img src=/images/interface.jpg alt="AWS Grand Finale UI" width=800><figcaption style=font-size:13px;color:#5d5c5c;font-style:italic;text-align:center><p>Interface used for the Grand Finale (Note: this was a test question during dry run)</p></figcaption></figure><p>There wasn&rsquo;t really too much time to meddle with the temperature and top-P given the limited time we had for inference, so I left it at the default of 1 and 0.9. I decided so in view that the questions were largely argumentative rather than factual in nature (more so for question 6 and 7 which tested our models&rsquo; on creativity).</p><h2 id=prompt-engineering>Prompt Engineering <a href=#prompt-engineering class=anchor>🔗</a></h2><p>We had a dry run the day before the Grand Finale to familiarise ourselves with the interface and parameters. Given the limited time we had to prompt, get the inference output and potentially re-prompt, the finalists had a consensus to prepare our prompts beforehand so that we can do a simple copying-pasting during the actual Grand Finale.</p><p>Being a novice in prompt engineering (and the lack of energy to deep dive into it), I prepared a simple prompt based off some brief research:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plaintext data-lang=plaintext><span style=display:flex><span>You are an expert on Singapore culture and will be judged on your answer.
+</span></span><span style=display:flex><span>Answer the question as accurate and comprehensive.
+</span></span><span style=display:flex><span>Start with a title and then a short introduction.
+</span></span><span style=display:flex><span>Use sub paragraphs and elaborate in details in point forms.
+</span></span><span style=display:flex><span>Give as many details and examples as possible.
+</span></span></code></pre></div><p><em>Sidenote: you could actually ask ChatGPT to suggest a good prompt framework for you, which one of the finalists Chee Hoe did and gotten pretty good results!</em></p><p>The interface we were using for the Grand Finale would automatically append the actual question to the prompt, so we did not have to copy the question into the prompt.</p><p>Since we were judged by a LLM (40%), a panel of five experts (40%), and audience (20%), I felt that the most controllable component was the LLM judge. Hence, I had the strategy (and hence the way I crafted my prompt) to focus on generating a long response in hope to maximise the LLM judge&rsquo;s score. From the preliminary round, it seemed like a LLM judge had the tendency to prefer longer response. I also came across another working paper &ldquo;<a href=https://arxiv.org/pdf/2409.15268 target=_blank rel=noopener>Style Outweighs Substance: Failure Modes of LLM Judges in Alignment Benchmarking</a>&rdquo; which suggested that LLM judges have implicit biasness and prioritise style over factuality.</p><p>My strategy mostly worked as I was scored relatively well by the LLM judge, but much less so by the panel of experts. This was expected and I was simply trying to hang on and stay in the game for 3rd place (because I just wanted the nice trophy!).</p><p>The turning point came in the final question (the bonus round) which gave double points. It was a question that tested the model&rsquo;s creativity to come up with an &ldquo;<em>innovative acronym that captures the essence of Singapore culture</em>&rdquo;. I had the intuition to amend my prompt slightly, hoping that the response would be more creative and light-hearted, while ensuring that the output format that is not too structured and rigid (i.e. avoid title and sub-paragraphs).</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plaintext data-lang=plaintext><span style=display:flex><span>You are an expert on Singapore culture and will be judged on your answer.
+</span></span><span style=display:flex><span>Answer the question as accurate and comprehensive.
+</span></span><span style=display:flex><span>Come up with an acronym and explain in details.
+</span></span><span style=display:flex><span>Be creative and funny.
+</span></span></code></pre></div><p>On the first inference attempt, my model came up with an acronym that was not an actual word. Hence I made the decision to regenerate and it thankfully it came up with an acronym S.A.C.R.E.D that made sense. I felt it had a good connotation when used to describe Singapore! For this question, I think I was judged as 2nd by the LLM judge and 1st from the panel of experts, which pushed me to overall 1st place.</p><p>On hindsight, I could have amended my prompt along the lines of: &ldquo;<em>Come up with an acronym that is an actual word related to Singapore, and explain in details</em>&rdquo;.</p><h2 id=questions-recap>Questions Recap <a href=#questions-recap class=anchor>🔗</a></h2><p>To have a sense of how our fine-tuned LLMs were put to the test, here are the seven questions that were asked:</p><ol><li>How has Singapore&rsquo;s multicultural heritage influenced its modern cuisine, and what are some of the latest unique fusion dishes that have I emerged as a result?</li><li>Describe the significance of the &ldquo;kampong spirit&rdquo; in Singapore&rsquo;s history and explain how it has evolved in today&rsquo;s urban environment.</li><li>Explain the role of Singlish in Singaporean identity and discuss the government&rsquo;s stance on its usage in formal and informal settings.</li><li>What has changed in Singapore&rsquo;s education system lately and how does it shape the country&rsquo;s cultural values and prepare the future generations?</li><li>Where are the recommended hawker centres in Singapore and its famous dishes for Generation Z?</li><li>Write a memoir about changes you&rsquo;ve seen in Singaporean commuters over the years. What are the most amusing trends you&rsquo;ve noticed in 2024?</li><li>Singaporeans are known for their love of acronyms and abbreviations (e.g., &ldquo;BTO&rdquo; for &ldquo;Built to Order&rdquo;). Can you create an innovative acronym that captures the essence of Singapore culture?</li></ol><h2 id=conclusion>Conclusion <a href=#conclusion class=anchor>🔗</a></h2><p>I had great fun participating in the LLML and I hope this writeup will help future participants have a shorter learning curve and see early success in their fine-tuning efforts. I certainly expect the next round of LLML to be more intense and competitive!</p><p>I am by no means an expert in fine-tuning or prompting, and there&rsquo;s still so much for me to learn. Looking forward to connecting with and learning from many more like-minded people in the AI space!</p><p>Special thanks to Gen-C Generative AI Learning Community for hosting the workshop and the AWS team for organizing and facilitating the LLML, and many others who contributed to the success of the workshop and competition!</p><p>Till the next Singapore Nationwide AWS Large Language Models League!</p></div><div class=tags><a href=https://andyphua114.github.io/tags/llm>llm</a>
+<a href=https://andyphua114.github.io/tags/aws>aws</a></div></section></main><footer id=footer><div class=copyright>© Copyright
+2025
+<span class=split><svg fill="#bbb" width="15" height="15" id="heart-15" width="15" height="15" viewBox="0 0 15 15"><path d="M13.91 6.75c-1.17 2.25-4.3 5.31-6.07 6.94-.1903.1718-.4797.1718-.67.0C5.39 12.06 2.26 9 1.09 6.75-1.48 1.8 5-1.5 7.5 3.45 10-1.5 16.48 1.8 13.91 6.75z"/></svg>
+</span>Andy Phua</div><div class=powerby>Powered by <a href=http://www.gohugo.io/>Hugo</a> Theme By <a href=https://github.com/nodejh/hugo-theme-mini>nodejh</a></div></footer></body></html>

@@ -12,9 +12,10 @@ googleAnalytics = "G-8WWJE6P22E"
 # Site Author
 author = 'Andy Phua'
 # Author biography
-bio = 'Senior Data Analyst | Aspiring Data Scientist'
+bio = 'AI Engineer'
 # Site Description, used in HTML meat
 description = 'My Blog'
+enableGoogleAnalytics = true
 
 [markup.goldmark.renderer]
 unsafe= true
