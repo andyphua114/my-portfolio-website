@@ -5,6 +5,8 @@ theme = 'hugo-theme-mini'
 
 paginate = 5
 
+googleAnalytics = "G-8WWJE6P22E"
+
 # Site parameters
 [params] 
 # Site Author
